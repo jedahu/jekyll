@@ -20,9 +20,9 @@ class TestPost < Test::Unit::TestCase
     should "ensure valid posts are valid" do
       assert Post.valid?("2008-09-09-foo-bar.textile")
       assert Post.valid?("foo/bar/2008-09-09-foo-bar.textile")
+      assert Post.valid?("blah")
 
       assert !Post.valid?("lol2008-09-09-foo-bar.textile")
-      assert !Post.valid?("blah")
     end
 
     context "processing posts" do
